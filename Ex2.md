@@ -2,7 +2,6 @@
 ## AIM:
 To create a manager database and execute DML queries using SQL.
 
-
 ## DML(Data Manipulation Language)
 <div align="justify">
 The SQL commands that deal with the manipulation of data present in the database belong to DML or Data Manipulation Language and this includes most of the SQL statements. It is the component of the SQL statement that controls access to data and to the database. Basically, DCL statements are grouped with DML statements.
@@ -16,11 +15,12 @@ DELETE: It is used to delete records from a database table.<br>
 </div>
 
 ## Create the table as given below:
-```sql
+```
+sql
 create table manager(enumber number(6),ename char(15),salary number(5),commission number(4),annualsalary number(7),Hiredate date,designation char(10),deptno number(2),reporting char(10));
 ```
 ## insert the following values into the table
-```sql
+```
 insert into manager values(7369,'Dharsan',2500,500,30000,'30-June-81','clerk',10,'John');
 insert into manager values(7839,'Subu',3000,400,36000,'1-Jul-82','manager',null,'James');
 insert into manager values(7934,'Aadhi',3500,300,42000,'1-May-82','manager',30,NULL);
@@ -30,11 +30,11 @@ insert into manager values(7788,'Vikash',4000,0,48000,'12-Aug-82','clerk',50,'Bo
 ### Q1) Update all the records of manager table by increasing 10% of their salary as bonus.
 
 ### QUERY:
-'''
+```
 UPDATE manager
 SET salary = salary + (salary * 0.10),
 annualsalary = annualsalary + (annualsalary * 0.10);
-'''
+```
 
 ### OUTPUT:
 ![image](https://github.com/Anandanaruvi/EX-2-Data-Manipulation-Language-DML-and-Data-Control-Language-DCL-Commands/assets/120443233/76ad542e-bce5-4e3b-adfe-e40b58edf92a)
@@ -43,9 +43,9 @@ annualsalary = annualsalary + (annualsalary * 0.10);
 
 
 ### QUERY:
-'''
+```
 DELETE FROM manager WHERE salary < 2750;
-'''
+```
 
 ### OUTPUT:
 ![image](https://github.com/Anandanaruvi/EX-2-Data-Manipulation-Language-DML-and-Data-Control-Language-DCL-Commands/assets/120443233/b25af04c-9f68-4411-b97c-2a80f18ef719)
@@ -54,10 +54,10 @@ DELETE FROM manager WHERE salary < 2750;
 
 
 ### QUERY:
-'''
+```
 SELECT ename AS "Name", salary * 12 AS "Annual Salary"
 FROM manager;
-'''
+```
 
 ### OUTPUT:
 ![image](https://github.com/Anandanaruvi/EX-2-Data-Manipulation-Language-DML-and-Data-Control-Language-DCL-Commands/assets/120443233/dcb86dde-d464-4318-afe8-b7617fe4824b)
@@ -65,9 +65,9 @@ FROM manager;
 ### Q5)	List the names of Clerks from emp table.
 
 ### QUERY:
-'''
+```
 SELECT ename from manager where designation='clerk';
-'''
+```
 
 ### OUTPUT:
 ![image](https://github.com/Anandanaruvi/EX-2-Data-Manipulation-Language-DML-and-Data-Control-Language-DCL-Commands/assets/120443233/6d4bf690-493b-4f2c-9824-b58242f02b57)
@@ -77,9 +77,9 @@ SELECT ename from manager where designation='clerk';
 
 
 ### QUERY:
-'''
+```
 SELECT ename from manager where designation!='manager';
-'''
+```
 
 ### OUTPUT:
 ![image](https://github.com/Anandanaruvi/EX-2-Data-Manipulation-Language-DML-and-Data-Control-Language-DCL-Commands/assets/120443233/b5baa858-6bf7-4f40-93b1-b34ecd0540ba)
@@ -89,9 +89,9 @@ SELECT ename from manager where designation!='manager';
 
 
 ### QUERY:
-'''
+```
 SELECT ename from manager where commission=0;
-'''
+```
 
 ### OUTPUT:
 
@@ -101,11 +101,11 @@ SELECT ename from manager where commission=0;
 
 
 ### QUERY:
-'''
+```
 SELECT ename
 FROM manager
 WHERE ename LIKE 'S%' OR ename LIKE '%s';
-'''
+```
 
 ### OUTPUT:
 ![image](https://github.com/Anandanaruvi/EX-2-Data-Manipulation-Language-DML-and-Data-Control-Language-DCL-Commands/assets/120443233/393999f2-6917-42de-bf86-f6cf7c2d2fd9)
@@ -115,10 +115,10 @@ WHERE ename LIKE 'S%' OR ename LIKE '%s';
 
 
 ### QUERY:
-'''
+```
 select ename,designation,deptno,Hiredate from manager
 order by Hiredate asc;
-'''
+```
 
 ### OUTPUT:
 ![image](https://github.com/Anandanaruvi/EX-2-Data-Manipulation-Language-DML-and-Data-Control-Language-DCL-Commands/assets/120443233/a958cfbf-8789-4927-8a6f-20bf6fb349ea)
@@ -128,11 +128,11 @@ order by Hiredate asc;
 
 
 ### QUERY:
-'''
+```
 SELECT *
 FROM manager
 WHERE Hiredate < TO_DATE('1981-09-30', 'YYYY-MM-DD');
-'''
+```
 
 ### OUTPUT:
 
@@ -142,10 +142,10 @@ WHERE Hiredate < TO_DATE('1981-09-30', 'YYYY-MM-DD');
 
 
 ### QUERY:
-'''
+```
 select ename,deptno,salary from manager order by deptno asc;
 select ename,deptno,salary from manager order by salary desc;
-'''
+```
 
 ### OUTPUT:
 ![image](https://github.com/Anandanaruvi/EX-2-Data-Manipulation-Language-DML-and-Data-Control-Language-DCL-Commands/assets/120443233/a1a4c19d-9968-481a-8791-5e66a3828690)
@@ -155,9 +155,9 @@ select ename,deptno,salary from manager order by salary desc;
 
 
 ### QUERY:
-'''
+```
 select ename from manager where deptno not in (10,30,40);
-'''
+```
 
 ### OUTPUT:
 ![image](https://github.com/Anandanaruvi/EX-2-Data-Manipulation-Language-DML-and-Data-Control-Language-DCL-Commands/assets/120443233/29d1eefe-285e-43fd-8ee4-07793a0ffef5)
@@ -165,9 +165,9 @@ select ename from manager where deptno not in (10,30,40);
 ### Q13) Find number of rows in the table EMP
 
 ### QUERY:
-'''
+```
 select count(*) from manager;
-'''
+```
 
 ### OUTPUT:
 ![image](https://github.com/Anandanaruvi/EX-2-Data-Manipulation-Language-DML-and-Data-Control-Language-DCL-Commands/assets/120443233/330210bf-fa53-4cb9-bdca-025ca95c5b50)
@@ -176,7 +176,7 @@ select count(*) from manager;
 ### Q14) Find maximum, minimum and average salary in EMP table.
 
 ### QUERY:
-'''
+```
 select ename ,salary,annualsalary from manager
 where salary = (select max(salary) from manager);
 
@@ -184,7 +184,7 @@ select ename ,salary,annualsalary from manager
 where salary = (select min(salary) from manager);
 
 select avg(salary) from manager;
-'''
+```
 
 ### OUTPUT:
 ![image](https://github.com/Anandanaruvi/EX-2-Data-Manipulation-Language-DML-and-Data-Control-Language-DCL-Commands/assets/120443233/e9651ca4-c36c-4a1c-9b5e-de5d307a685a)
@@ -193,12 +193,12 @@ select avg(salary) from manager;
 ### Q15) List the jobs and number of employees in each job. The result should be in the descending order of the number of employees.
 
 ### QUERY:
-'''
+```
 SELECT designation, COUNT(*) AS "Number of Employees"
 FROM manager
 GROUP BY designation
 ORDER BY COUNT(*) DESC;
-'''
+```
 
 ### OUTPUT:
 ![image](https://github.com/Anandanaruvi/EX-2-Data-Manipulation-Language-DML-and-Data-Control-Language-DCL-Commands/assets/120443233/68fa36e7-756a-4356-b33f-ee9cf05c76ca)
